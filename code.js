@@ -1,5 +1,7 @@
 $("document").ready(function() {
-  $(".slider").rangeslider();
+  $('.slider').each(function() {
+    $(this).rangeslider();
+  });
 });
 $.fn.rangeslider = function(options) {
   var obj = this;
@@ -10,6 +12,7 @@ $.fn.rangeslider = function(options) {
   updateSlider(this);
   return obj;
 };
+
 
 function updateSlider(passObj) {
   var obj = $(passObj);
