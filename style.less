@@ -1,16 +1,28 @@
+@font-face {
+	font-family: EquestriaSmall;
+	src:url(assets/font/equestrianeue.ttf) format("truetype");
+	font-weight:normal; }
+@font-face {
+	font-family: EquestriaBig;
+	src:url(assets/font/equestria.ttf) format("truetype"); }
+
+// styles that apply to everything unless contradicted below	
 body {
-	background-color: #2c90b4;
-	color: white;
+	background-image: url('assets/other/parchment.png');
+	color: #0B1664;
 	padding-top: 10px;
 	padding-right: 80px;
 	padding-bottom: 100px;
 	padding-left: 80px;
 	zoom: 1;
+	font-family: EquestriaSmall;
 }
 
+// styles for various types of text containers
 h1 {
 	font-size: 60px;
 	text-align: center;
+	font-family: EquestriaBig;
 }
 
 h2 {
@@ -28,27 +40,32 @@ h3 {
 	font-size: 25px;
 }
 
+// styles for the table
 table {
 	text-align: center;
 	margin: auto;
 	font-size: 25px;
 }
 
+// styles for table data
 td {
 	padding: 10px;
 	// border: 2px solid rgb(52, 226, 43);
 }
 
-.character {
+// styles for the character table, currently unused
+// .character {
 	// padding-right: 180px;
 	// padding-left: 180px;
-}
+// }
 
-.charslide {
-	border: 2px solid blueviolet;
 
-}
+// .charslide {
+// 	border: 2px solid blueviolet;
 
+// }
+
+// styles for character pictures and frame combined
 .portrait {
 
 	position: relative;
@@ -58,6 +75,7 @@ td {
 
 }
 
+// styles for character pictures
 .avatar {
 	// display: block;
 	position: relative;
@@ -70,6 +88,7 @@ td {
 
 }
 
+// styles for the frame
 .frame {
 	// display: block;
 	position: absolute;
@@ -82,10 +101,13 @@ td {
 
 
 .range-slider {
-	// color: rgb(110, 15, 15);
-	font-size: 40px;
-	-webkit-text-stroke: 1px rgb(255, 224, 221);
-    -webkit-text-fill-color: rgb(173, 51, 35);
+	// styles for the slider pointer text
+	
+	font-size: 40px; // size
+	-webkit-text-stroke: 1px rgb(255, 224, 221); // border color
+    -webkit-text-fill-color: rgb(173, 51, 35); // core color
+	
+	// other positioning stuff
 	display: inline-block;
 	width: 50vmax;
 	-webkit-box-sizing: border-box;
@@ -113,6 +135,7 @@ td {
 	}
 
 	&>span.slider-container {
+		// positioning stuff for the slider bar
 		display: inline-block;
 		min-height: 110px;
 		display: inline-block;
@@ -126,7 +149,11 @@ td {
 		box-sizing: border-box;
 
 		&>span.bar {
+			// styles for the slider bar
+			// the background color when the empty slider bar
 			background-color: #000;
+			
+			// other positioning stuff
 			display: inline-block;
 			position: absolute;
 			z-index: 1;
@@ -140,8 +167,11 @@ td {
 			border-radius: 10px;
 
 			&>span {
+				// Styles for the slider bar
+				// the gradient for the slider bar when filled
 				background: rgb(110, 110, 110);
 				background: linear-gradient(315deg, rgba(110, 110, 110, 1) 0%, rgba(192, 192, 192, 1) 48%, rgba(237, 237, 237, 1) 100%);
+				// other positioning stuff
 				display: inline-block;
 				float: left;
 				height: 30px;
@@ -150,6 +180,8 @@ td {
 		}
 
 		&>span.bar-btn {
+			// Styles for the pointer
+			// Here are a lot of positioning controls
 			display: inline-block;
 			position: absolute;
 			width: 60px;
@@ -158,9 +190,14 @@ td {
 			// padding-left: 8px;
 			font-weight: bold;
 			text-align: center;
-			background: rgb(110, 110, 110);
-			background: linear-gradient(315deg, rgba(110, 110, 110, 1) 0%, rgba(192, 192, 192, 1) 48%, rgba(237, 237, 237, 1) 100%);
+			// I originally was fiddling with gradient backgrounds
+			// background: rgb(110, 110, 110);
+			// background: linear-gradient(315deg, rgba(110, 110, 110, 1) 0%, rgba(192, 192, 192, 1) 48%, rgba(237, 237, 237, 1) 100%);
+			
+			// You can use an image for your pointer!!
 			background-image: url("assets/slider/knight_shield.png");
+
+			// more positioning controls
 			background-position: bottom .25cm right .22cm;
 			background-size: 42px;
 			background-repeat: no-repeat;
@@ -174,13 +211,20 @@ td {
 			// box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
 
 			&:after {
+				// Styles for the slider button
 				content: "";
+				// The slider is circular shaped and originally had a solid border
 				// border: 2px solid rgb(255, 255, 255);
 				// background-color: #02c38a;
+				// Pick a circular image for the slider button
 				background-image: url("assets/slider/BotW_Pot_Lid_Model.webp");
+				// fiddle with size until it fits in just right
 				background-size: 43px;
+				// Centered is where it needs to be
 				background-position: center;
+				// don't repeat so we don't get confused
 				background-repeat: no-repeat;
+				// other sizing and positioning stuff
 				border-radius: 20px;
 				width: 40px;
 				height: 40px;
