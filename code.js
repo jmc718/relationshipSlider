@@ -13,7 +13,6 @@ $.fn.rangeslider = function(options) {
   return obj;
 };
 
-
 function updateSlider(passObj) {
   var obj = $(passObj);
   var value = obj.val();
